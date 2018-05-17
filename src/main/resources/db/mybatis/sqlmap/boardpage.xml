@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardpage">
+	<select id="getBoardPage" resultType="boardpageVO">
+		select * from board_page
+	</select>
+	
+	<insert id="insertBoardPage" parameterType="String">
+  	insert into board_page(bp_seq, bp_title, bp_dt, bp_yn, bp_mem_id)
+  	values(bp_seq.nextval, #{bp_title}, sysdate, 'Y', #{bp_mem_id})
+  </insert>
+</mapper>

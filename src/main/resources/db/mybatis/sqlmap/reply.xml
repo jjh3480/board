@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reply">
+	<insert id="insertReply" parameterType="ReplyVO">
+		insert into reply(comment_seq, comment_board_seq, comment_mem_id, comment_del_yn, comment_content)
+		values(COMMENT_SEQ.NEXTVAL, ${comment_board_seq}, ${comment_mem_id}, 'N', ${comment_content})
+	</insert>
+</mapper>

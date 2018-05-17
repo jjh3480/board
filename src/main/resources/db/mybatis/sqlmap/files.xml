@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="files">
+	<insert id="insertFiles" parameterType="String">
+		insert into files(file_seq, file_board_seq, file_path)
+		values(file_seq.currval, board_seq.currval, #{file_path})
+	</insert>
+</mapper>
